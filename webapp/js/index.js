@@ -37,10 +37,10 @@ window.onload = function () {
         heart_check.type = 'checkbox';
         heart_check.id = 'i' + page + i;
         heart_div.appendChild(heart_check);
-        var heart_lable = document.createElement('label');
-        heart_lable.setAttribute('for', 'i' + page + i);
-        heart_lable.innerHTML = '❤';
-        heart_div.appendChild(heart_lable);
+        var heart_label = document.createElement('label');
+        heart_label.setAttribute('for', 'i' + page + i);
+        heart_label.innerHTML = '❤';
+        heart_div.appendChild(heart_label);
         div.appendChild(heart_div);
         li[short_li_index].appendChild(div);
       }
