@@ -15,28 +15,40 @@ window.onload = function () {
         var short_li_index = getShort();
         // 新建标签并加入数据
         var div = document.createElement('div');
+        div.className = 'card';
         var img = document.createElement('img');
         img.src = data[i].preview;
+        img.className = 'img';
         div.appendChild(img);
         var p = document.createElement('p');
+        p.className = 'card-article'
         div.appendChild(p);
         var span_1 = document.createElement('span');
-        span_1.id = 'img-title';
+        span_1.className = 'img-title';
         span_1.innerHTML = data[i].title;
         p.appendChild(span_1);
         var span_2 = document.createElement('span');
-        span_2.id = 'img-content';
+        span_2.className = 'img-des';
         span_2.innerHTML = data[i].content;
         p.appendChild(span_2);
-        var img_heart = document.createElement('img');
-        img_heart.id = 'heart';
-        img_heart.src = './images/heart_0.png';
-        div.appendChild(img_heart);
+        var heart_div = document.createElement('div');
+        heart_div.className = 'toggle';
+        var heart_check = document.createElement('input');
+        heart_check.type = 'checkbox';
+        heart_check.id = 'i' + page + i;
+        heart_div.appendChild(heart_check);
+        var heart_lable = document.createElement('label');
+        heart_lable.setAttribute('for', 'i' + page + i);
+        heart_lable.innerHTML = '❤';
+        heart_div.appendChild(heart_lable);
+        div.appendChild(heart_div);
         li[short_li_index].appendChild(div);
       }
     });
     door = true;
   }
+
+
   // 获取最短的li标签的索引
   function getShort() {
     var index = 0;
@@ -72,9 +84,9 @@ window.onload = function () {
       }
     }
     // 返回顶部按钮
-    if (scrollTop >= screen.height) {
+    if (scrollTop >= screen.height * 2.5) {
       return_top.style.display = "block";
-    } else if (scrollTop < screen.height) {
+    } else if (scrollTop < screen.height * 2) {
       return_top.style.display = "none";
     }
   }

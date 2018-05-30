@@ -125,7 +125,7 @@ svg:hover {
   width: 222px;
 }
 
-#container #list_1 li div {
+#container #list_1 li .card {
   width: 300px;
   height: 350px;
   border-radius: 5px;
@@ -135,14 +135,10 @@ svg:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, .12);
   margin-bottom: 30px;
   transition: all .3s ease-in-out;
-  cursor: pointer;
 }
 
-/* #container #list_1 li div:hover {
-  
-} */
 
-#container #list_1 li div img {
+#container #list_1 li .card .img {
   width: 250px;
   height: 140px;
   position: relative;
@@ -152,7 +148,7 @@ svg:hover {
   border: 1px solid #eee;
 }
 
-#container #list_1 li div p {
+#container #list_1 li .card .card-article {
   width: 250px;
   height: 80px;
   position: relative;
@@ -162,7 +158,7 @@ svg:hover {
   border: 1px solid #eee;
 }
 
-#container #list_1 li div p #img-title {
+#container #list_1 li .card .card-article .img-title {
   display: block;
   margin-top: 10px;
   font-size: 20px;
@@ -171,18 +167,27 @@ svg:hover {
   text-align: center;
 }
 
-#container #list_1 li div p #img-content {
+#container #list_1 li .card .card-article .img-des {
   display: block;
   margin-top: 10px;
   text-align: center;
 }
 
-#container #list_1 li div #heart {
+#container #list_1 li .card .toggle {
   display: block;
   position: relative;
-  top: 9%;
+  top: 10%;
+  left: 82%;
   width: 30px;
   height: 30px;
+  font-size: 1.8em;
+  text-decoration: none;
+  color: #e3dbdb;
+  transition: .3s ease-in-out;
+}
+
+#container #list_1 li .card .toggle label{
+  cursor: pointer;
 }
 
 #return_top {
@@ -196,4 +201,12 @@ svg:hover {
   line-height: 50px;
   border: 1px solid gray;
   text-decoration-line: none;
+}
+
+#container #list_1 li .card .toggle input[type=checkbox] {
+  visibility: hidden;
+}
+
+#container #list_1 li .card .toggle input:checked+label {
+  color: #fb5151;
 }
